@@ -1,0 +1,16 @@
+{
+  "name": "phpchecker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Free PHP version checker based on OpenAI's php2shell-checker.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && wrangler dev --ip 127.0.0.1 --port 8787",
+    "test": "node --test tests/*.test.js",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": { "ipaddr.js": "^2.2.0" },
+  "devDependencies": { "wrangler": "^4.0.0" }
+}

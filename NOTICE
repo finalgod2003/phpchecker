@@ -1,0 +1,16 @@
+PHP Checker
+https://phpchecker.org
+
+Contains modified code from OpenAI's php2shell-checker, licensed under Apache-2.0.
+Source: https://github.com/openai/php2shell-checker
+Upstream commit: ffcd3fc82e5b404f2a04a95b2805ca7639d530fa
+Retrieved: 2026-10-23
+
+The original checker is preserved in vendor/phpcheck.cjs.
+public/checker.js adapts its version classification and conservative header
+selection for browser ES modules and Cloudflare Workers, adds structured
+report fields, and removes the Node CLI interface. src/worker.js adds the
+HTTP service, public-host validation, timeouts and request limiting.
+
+This is an independent project. It is not affiliated with or endorsed by
+OpenAI or the PHP project. PHP is a trademark of its respective owner.
