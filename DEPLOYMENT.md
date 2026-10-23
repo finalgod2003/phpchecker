@@ -2,6 +2,37 @@
 
 Updated 2026-10-23 (Asia/Taipei).
 
+## Analytics and search engine registration
+
+Configured and deployed on 2026-10-23 in commit `02e86ce`.
+
+- Plausible: https://stats.blackholeenglish.com/phpchecker.org, reporting
+  timezone `Asia/Taipei`. Installation verification passed and the dashboard
+  received the first pageview. Script: `/js/pa-KTiTuUTMILDTKSFb6E06d.js`
+  on the self-hosted statistics domain.
+- GA4: account `399944048` (Fang_Zhenyu), property `560510904` (PHP Checker),
+  web stream `16187851319` (PHP Checker Web), measurement ID `G-GTGG5Y7VCL`.
+  Reporting timezone is Taipei (UTC+08:00). Realtime reported one active
+  visitor and the `first_visit`, `page_view`, and `session_start` events.
+- Both analytics scripts and the Google/Bing verification meta tags are
+  included by the shared page template. Initialization is in
+  `public/analytics.js`; CSP permits the required analytics hosts without
+  allowing arbitrary inline scripts. Google signals and ad personalization
+  are disabled in the tag configuration. Privacy policy updated accordingly.
+- GSC: verified the URL-prefix property `https://phpchecker.org/` using the
+  HTML meta tag. Submitted `https://phpchecker.org/sitemap.xml`; Google reports
+  **Success** and **6 discovered pages**. This is sitemap discovery, not a
+  confirmation that those pages are indexed.
+- Bing Webmaster Tools: added and verified `https://phpchecker.org/` using
+  the HTML meta tag. The same sitemap was submitted and is **Processing**,
+  with no reported errors or warnings at the time of submission.
+- Verification: generated pages checked for one GA4 loader, both analytics
+  integrations, both verification tags, and updated privacy text. Production
+  homepage loaded the scripts without browser console errors. No unrelated
+  regression suite was run.
+
+Keep the verification meta tags in future deployments to preserve ownership.
+
 ## Live application
 
 - GitHub: https://github.com/finalgod2003/phpchecker
