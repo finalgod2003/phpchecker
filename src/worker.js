@@ -31,7 +31,7 @@ export function validateTarget(value) {
 export async function requirePublicDNS(host, fetcher, signal) {
   const records = await Promise.all(['A', 'AAAA'].map(async type => {
     const response = await fetcher(`https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(host)}&type=${type}`, {
-      headers: { Accept: 'application/dns-json' }, signal, redirect: 'error',
+      headers: { Accept: 'application/dns-json' }, signal, redirect: 'manual',
     });
     if (!response.ok) throw new Error('DNS lookup failed. Try again in a moment.');
     const data = await response.json();
