@@ -37,9 +37,10 @@ npm run build
 4. Build command: `npm run build`. Deploy command: `npx wrangler deploy`.
 5. Root directory: `/`. Production branch: `main`.
 6. Deploy. Future pushes to `main` automatically build and deploy.
-7. Add `phpchecker.org` and `www.phpchecker.org` as Worker custom domains after
-   the zone is active in this Cloudflare account. The Worker redirects `www`
-   to the apex domain. Existing query parameters are preserved.
+7. The current deployment uses proxied apex DNS records and the exact Worker
+   route `phpchecker.org/*`, maintained in the Cloudflare dashboard. This
+   preserves the imported DNS records. See [DEPLOYMENT.md](DEPLOYMENT.md) for
+   the verified deployment state and remaining activation steps.
 8. If the domain still uses Spaceship nameservers, add its zone to Cloudflare
    on the Free plan and set the exact Cloudflare-assigned nameservers in
    Spaceship. Preserve existing mail/verification DNS records if present.
